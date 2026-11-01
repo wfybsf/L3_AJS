@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>что</title>
+</head>
+<body>
+    <script>
+        function sort_by_author(comments){
+            setTimeout(() =>{comments.sort((a, b) => a.name.localeCompare(b.name));
+            console.log(comments.map(comments =>({ id: comments.id, name:comments.name })))});
+    }
+    fetch('https://jsonplaceholder.typicode.com/comments')
+        .then(response => response.json())
+        .then(comments => sort_by_author(comments))
+    </script>
+</body>
+</html>

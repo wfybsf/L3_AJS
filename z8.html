@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>что</title>
+</head>
+<body>
+    <script>
+        function incompleted_todos(todos){
+            new Promise(resolve => {
+                console.log(todos.filter(todo => !todo.completed).map(todo =>({ completed: todo.completed})));
+    })}
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => response.json())
+        .then(todos => incompleted_todos(todos))
+    </script>
+</body>
+</html>
